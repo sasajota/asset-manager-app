@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Facility;
-use backend\models\FacilitySearch;
+use backend\models\Transfer;
+use backend\models\TransferSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * FacilityController implements the CRUD actions for Facility model.
+ * TransferController implements the CRUD actions for Transfer model.
  */
-class FacilityController extends Controller
+class TransferController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class FacilityController extends Controller
     }
 
     /**
-     * Lists all Facility models.
+     * Lists all Transfer models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new FacilitySearch();
+        $searchModel = new TransferSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class FacilityController extends Controller
     }
 
     /**
-     * Displays a single Facility model.
+     * Displays a single Transfer model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,14 @@ class FacilityController extends Controller
     }
 
     /**
-     * Creates a new Facility model.
+     * Creates a new Transfer model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+
     public function actionCreate()
     {
-        $model = new Facility();
+        $model = new Transfer();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -81,9 +82,8 @@ class FacilityController extends Controller
         ]);
 
     }
-
     /**
-     * Updates an existing Facility model.
+     * Updates an existing Transfer model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -106,9 +106,8 @@ class FacilityController extends Controller
             'model' => $model,
         ]);
     }
-
     /**
-     * Deletes an existing Facility model.
+     * Deletes an existing Transfer model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -121,16 +120,17 @@ class FacilityController extends Controller
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
     }
+
     /**
-     * Finds the Facility model based on its primary key value.
+     * Finds the Transfer model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Facility the loaded model
+     * @return Transfer the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Facility::findOne($id)) !== null) {
+        if (($model = Transfer::findOne($id)) !== null) {
             return $model;
         }
 

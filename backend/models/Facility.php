@@ -86,4 +86,5 @@ class Facility extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Transfer::className(), ['facility_id' => 'id']);
     }
+
 }
