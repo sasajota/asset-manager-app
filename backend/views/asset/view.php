@@ -2,11 +2,13 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\models\Assignee;
+use backend\models\Facility;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Asset */
 
-$this->title = $model->id;
+$this->title = $model->asset_name;
 $this->params['breadcrumbs'][] = ['label' => 'Assets', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -33,8 +35,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'asset_name',
             'introduction_date',
             'asset_value',
-            'assignee_id', 'value => $model->assignee->first_name',
-            'facility_id', 'value => $model->facility->facility_name',
+            [
+                'label'=>'Assignee',
+                'value' => function ($model) {
+                    return Assignee::findOne(['id' => $model->assignee_id])->first_name;
+                }
+            ],
+            [
+                'label'=>'Objekat',
+                'value' => function ($model) {
+                    return Facility::findOne(['id' => $model->facility_id])->facility_name;
+                }
+            ],
             'asset_status',
             'created_at',
             'updated_at',

@@ -20,7 +20,8 @@ use kartik\date\DatePicker;
     <?= $form->field($model, 'date_of_birth')->widget(DatePicker::classname(), [
             'options' => ['placeholder' => 'Odaberi datum rođenja'],
             'pluginOptions' => [
-                'autoclose'=>true
+                'autoclose'=>true,
+                'format' => 'yyyy-m-dd'
             ]
         ])
     ?>

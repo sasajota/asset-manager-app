@@ -67,8 +67,7 @@ class AssetController extends Controller
         $model = new Asset();
 
         if ($model->load(Yii::$app->request->post())) {
-            return $this->redirect(['view', 'id' => $model->id]);
-            $model->status = 'ACTIVE';
+            $model->asset_status = 'ACTIVE';
             $model->created_at = date('Y-m-d H:i:s');
 
             if ($model->save()) {
@@ -115,7 +114,7 @@ class AssetController extends Controller
     public function actionDelete($id)
     {
         $model = $this->findOne($id);
-        $model->status = 'INACTIVE';
+        $model->asset_status = 'INACTIVE';
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
     }
