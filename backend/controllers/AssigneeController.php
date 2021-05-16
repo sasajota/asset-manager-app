@@ -66,6 +66,7 @@ class AssigneeController extends Controller
     {
         $model = new Assignee();
 
+<<<<<<< HEAD
         if ($model->load(Yii::$app->request->post())) {
             $model->status = 'ACTIVE';
             $model->created_at = date('Y-m-d H:i:s');
@@ -73,12 +74,25 @@ class AssigneeController extends Controller
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
+=======
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+            $model->status = 'ACTIVE';
+            $model->created_at = date('Y-m-d H:i:s');
+        }
+
+        if ($model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
         }
 
         return $this->render('create', [
             'model' => $model,
         ]);
+<<<<<<< HEAD
     }
+=======
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
 
     /**
      * Updates an existing Assignee model.
@@ -93,18 +107,30 @@ class AssigneeController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
+<<<<<<< HEAD
             $model->updated_at = date('Y-m-d H:i:s');
 
             if ($model->save()) {
                 return $this->redirect('view', ['id' => $model->id]);
             }
+=======
+            $model->status = 'ACTIVE';
+            $model->updated_at = date('Y-m-d H:i:s');
+        }
+
+        if ($model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
         }
         
         return $this->render('update', [
             'model' => $model,
         ]);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
     /**
      * Deletes an existing Assignee model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

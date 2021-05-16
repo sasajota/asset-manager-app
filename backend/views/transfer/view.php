@@ -30,9 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+<<<<<<< HEAD
             'asset_id', 'value => $model->facility->asset_name',
             'assignee_id','value => $model->assignee->first_name',
             'facility_id','value => $model->facility->facility_name',
+=======
+            'asset_id',
+            'assignee_id',
+            'facility_id',
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
             'transfer_status',
             'created_at',
             'updated_at',

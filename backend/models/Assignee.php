@@ -49,10 +49,17 @@ class Assignee extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+<<<<<<< HEAD
             'first_name' => 'Ime',
             'last_name' => 'Prezime',
             'date_of_birth' => 'Datum rođenja',
             'assignee_status' => 'Status',
+=======
+            'first_name' => 'First Name',
+            'last_name' => 'Last Name',
+            'date_of_birth' => 'Date Of Birth',
+            'assignee_status' => 'Assignee Status',
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',

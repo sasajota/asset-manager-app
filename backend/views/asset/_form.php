@@ -2,7 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+<<<<<<< HEAD
 use yii\jui\DatePicker;
+=======
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Asset */
@@ -15,6 +18,7 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'asset_name')->textInput(['maxlength' => true]) ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'introduction_date')->widget(DatePicker::classname(), [
             'options' => ['placeholder' => 'Odaberi datum uvodjenja u upotrebu'],
             'pluginOptions' => [
@@ -22,6 +26,9 @@ use yii\jui\DatePicker;
             ]
         ])
     ?>
+=======
+    <?= $form->field($model, 'introduction_date')->textInput() ?>
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
 
     <?= $form->field($model, 'asset_value')->textInput(['maxlength' => true]) ?>
 
@@ -29,6 +36,11 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'facility_id')->textInput() ?>
 
+<<<<<<< HEAD
+=======
+    <?= $form->field($model, 'asset_status')->dropDownList([ 'ACTIVE' => 'ACTIVE', 'INACTIVE' => 'INACTIVE', ], ['prompt' => '']) ?>
+
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

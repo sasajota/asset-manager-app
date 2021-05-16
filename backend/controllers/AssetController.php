@@ -70,10 +70,17 @@ class AssetController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
             $model->status = 'ACTIVE';
             $model->created_at = date('Y-m-d H:i:s');
+<<<<<<< HEAD
             
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
+=======
+        }
+
+        if ($model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
         }
 
         return $this->render('create', [
@@ -94,6 +101,7 @@ class AssetController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
+<<<<<<< HEAD
             $model->updated_at = date('Y-m-d H:i:s');
 
 
@@ -102,6 +110,15 @@ class AssetController extends Controller
             }
         }
 
+=======
+            $model->status = 'ACTIVE';
+            $model->updated_at = date('Y-m-d H:i:s');
+        }
+
+        if ($model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
         
         return $this->render('update', [
             'model' => $model,

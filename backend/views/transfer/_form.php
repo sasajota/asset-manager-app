@@ -18,6 +18,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'facility_id')->textInput() ?>
 
+<<<<<<< HEAD
+=======
+    <?= $form->field($model, 'transfer_status')->dropDownList([ 'ACTIVE' => 'ACTIVE', 'INACTIVE' => 'INACTIVE', ], ['prompt' => '']) ?>
+
+>>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
