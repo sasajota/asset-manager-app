@@ -41,7 +41,10 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => 'Osnovna sredstva', 'url' => ['/asset/index']];
         $menuItems[] = ['label' => 'Lokacije', 'url' => ['/facility/index']];
+        $menuItems[] = ['label' => 'Zaduženi', 'url' => ['/assignee/index']];
+        $menuItems[] = ['label' => 'Prelaznice', 'url' => ['/transfer/index']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(

@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\date\DatePicker;
+use dosamigos\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Facility */
@@ -14,7 +16,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'facility_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'introduction_date')->textInput() ?>
+    <?= $form->field($model, 'introduction_date')->widget(DatePicker::classname(), [
+            'options' => ['placeholder' => 'Odaberi datum uvodjenja u upotrebu'],
+            'pluginOptions' => [
+                'autoclose'=>true
+            ]
+        ])
+    ?>
 
     <?= $form->field($model, 'location_lat')->textInput(['maxlength' => true]) ?>
 
@@ -22,15 +30,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fac_address')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'details')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'facility_status')->dropDownList([ 'ACTIVE' => 'ACTIVE', 'INACTIVE' => 'INACTIVE', ], ['prompt' => '']) ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <?= $form->field($model, 'deleted_at')->textInput() ?>
+    <?= $form->field($model, 'details')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'basic'
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

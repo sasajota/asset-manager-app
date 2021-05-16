@@ -54,13 +54,13 @@ class Facility extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'facility_name' => 'Facility Name',
-            'introduction_date' => 'Introduction Date',
-            'location_lat' => 'Location Lat',
-            'location_lon' => 'Location Lon',
-            'fac_address' => 'Fac Address',
-            'details' => 'Details',
-            'facility_status' => 'Facility Status',
+            'facility_name' => 'Naziv',
+            'introduction_date' => 'Datum uvođenja',
+            'location_lat' => 'Geografska širina',
+            'location_lon' => 'Geografska dužina',
+            'fac_address' => 'Adresa',
+            'details' => 'Detalji',
+            'facility_status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',
@@ -86,4 +86,5 @@ class Facility extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Transfer::className(), ['facility_id' => 'id']);
     }
+
 }
