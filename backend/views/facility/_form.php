@@ -19,7 +19,8 @@ use dosamigos\ckeditor\CKEditor;
     <?= $form->field($model, 'introduction_date')->widget(DatePicker::classname(), [
             'options' => ['placeholder' => 'Odaberi datum uvodjenja u upotrebu'],
             'pluginOptions' => [
-                'autoclose'=>true
+                'autoclose' => true,
+                'format' => 'yyyy-m-dd'
             ]
         ])
     ?>
@@ -30,16 +31,10 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'fac_address')->textInput(['maxlength' => true]) ?>
 
-<<<<<<< HEAD
     <?= $form->field($model, 'details')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'basic'
     ]) ?>
-=======
-    <?= $form->field($model, 'details')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'facility_status')->dropDownList([ 'ACTIVE' => 'ACTIVE', 'INACTIVE' => 'INACTIVE', ], ['prompt' => '']) ?>
->>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

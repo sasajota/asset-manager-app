@@ -66,21 +66,13 @@ class FacilityController extends Controller
     {
         $model = new Facility();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-            $model->status = 'ACTIVE';
+        if ($model->load(Yii::$app->request->post())) {
+            $model->facility_status = 'ACTIVE';
             $model->created_at = date('Y-m-d H:i:s');
-<<<<<<< HEAD
            
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
-=======
-        }
-
-        if ($model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
->>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
         }
 
 
@@ -103,9 +95,7 @@ class FacilityController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
-<<<<<<< HEAD
             $model->updated_at = date('Y-m-d H:i:s');
-
 
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -113,16 +103,6 @@ class FacilityController extends Controller
         }
 
       
-=======
-            $model->status = 'ACTIVE';
-            $model->updated_at = date('Y-m-d H:i:s');
-        }
-
-        if ($model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-        
->>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -137,10 +117,11 @@ class FacilityController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findOne($id);
-        $model->status = 'INACTIVE';
+        $model = Facility::findOne($id);
+        $model->facility_status = 'INACTIVE';
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
+        return $this->actionIndex();
     }
     /**
      * Finds the Facility model based on its primary key value.

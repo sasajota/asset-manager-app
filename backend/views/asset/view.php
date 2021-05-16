@@ -33,27 +33,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'asset_name',
             'introduction_date',
             'asset_value',
-<<<<<<< HEAD
             'assignee_id', 'value => $model->assignee->first_name',
             'facility_id', 'value => $model->facility->facility_name',
-=======
-            'assignee_id',
-            'facility_id',
->>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
             'asset_status',
             'created_at',
             'updated_at',
             'deleted_at',
         ],
     ]) ?>
-<<<<<<< HEAD
-[
-       'attribute' => 'employee_id',
-       'value' => $model->employee->employee_name,
-],
-
     
-=======
->>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
 
 </div>

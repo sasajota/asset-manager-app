@@ -56,21 +56,12 @@ class Asset extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-<<<<<<< HEAD
             'asset_name' => 'Naziv',
             'introduction_date' => 'Datum uvođenja',
             'asset_value' => 'Vrijednost',
             'assignee_id' => 'ID zaduženog',
             'facility_id' => 'ID Lokacije',
             'asset_status' => 'Status',
-=======
-            'asset_name' => 'Asset Name',
-            'introduction_date' => 'Introduction Date',
-            'asset_value' => 'Asset Value',
-            'assignee_id' => 'Assignee ID',
-            'facility_id' => 'Facility ID',
-            'asset_status' => 'Asset Status',
->>>>>>> 0b19c3b53b628d6741035d8379e609daf5180743
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'deleted_at' => 'Deleted At',

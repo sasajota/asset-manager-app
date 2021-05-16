@@ -66,12 +66,12 @@ class FacilitySearch extends Facility
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'deleted_at' => $this->deleted_at,
+            'facility_status' => 'ACTIVE'
         ]);
 
         $query->andFilterWhere(['like', 'facility_name', $this->facility_name])
             ->andFilterWhere(['like', 'fac_address', $this->fac_address])
-            ->andFilterWhere(['like', 'details', $this->details])
-            ->andFilterWhere(['like', 'facility_status', $this->facility_status]);
+            ->andFilterWhere(['like', 'details', $this->details]);
 
         return $dataProvider;
     }
