@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\FacilitySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Facilities';
+$this->title = 'Lokacije';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="facility-index">

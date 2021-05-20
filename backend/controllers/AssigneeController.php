@@ -96,12 +96,12 @@ class AssigneeController extends Controller
             $model->updated_at = date('Y-m-d H:i:s');
 
             if ($model->save()) {
-                return $this->redirect('view', ['id' => $model->id]);
+                return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-        
+
         return $this->render('update', [
-            'model' => $model,
+            'model' => $model
         ]);
     }
 
@@ -119,6 +119,7 @@ class AssigneeController extends Controller
         $model->assignee_status = 'INACTIVE';
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
+        return $this->actionIndex();
     }
 
     /**

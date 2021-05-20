@@ -4,6 +4,8 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\Asset;
+use backend\models\Assignee;
+use backend\models\Facility;
 use backend\models\AssetSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -74,11 +76,19 @@ class AssetController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
+        
+        $assignee = new Assignee();
+        $assignee = $assignee->getAllActive();
+        
+        return $this->render('create', [
+            'model' => $model,
+            'assignee' => $assignee
+        ]);
 
         return $this->render('create', [
             'model' => $model,
+            'facility' => $facility
         ]);
-
     }
 
     /**

@@ -62,9 +62,9 @@ class Asset extends \yii\db\ActiveRecord
             'assignee_id' => 'ID zaduženog',
             'facility_id' => 'ID Lokacije',
             'asset_status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'deleted_at' => 'Deleted At',
+            'created_at' => 'Datum kreiranja',
+            'updated_at' => 'Datum izmjene',
+            'deleted_at' => 'Datum brisanja',
         ];
     }
 

@@ -1,11 +1,13 @@
 <?php
 
 use yii\helpers\Html;
+use backend\models\Assignee;
+use backend\models\Facility;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Asset */
 
-$this->title = 'Create Asset';
+$this->title = 'Dodajte osnovno sredstvo';
 $this->params['breadcrumbs'][] = ['label' => 'Assets', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,6 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'assignee' => $assignee
+    ]) ?>
+
+    <?= $this->render('_form', [
+        'model' => $model,
+        'facility' => $facility
     ]) ?>
 
 </div>

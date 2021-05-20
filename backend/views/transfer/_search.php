@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use backend\models\Asset;
+use backend\models\Assignee;
+use backend\models\Facility;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\TransferSearch */

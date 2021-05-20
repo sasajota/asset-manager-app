@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
+use kartik\select2\Select2;
+use backend\models\Assignee;
+use backend\models\Facility;
+
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Asset */
@@ -26,9 +30,21 @@ use kartik\date\DatePicker;
 
     <?= $form->field($model, 'asset_value')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'assignee_id')->textInput() ?>
+    <?= $form->field($model, 'assignee_id')->widget(Select2::classname(), [
+            'data' => $assignee,
+            'options' => ['placeholder' => 'Odaberi korisnika'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]) ?>
 
-    <?= $form->field($model, 'facility_id')->textInput() ?>
+    <?= $form->field($model, 'facility_id')->widget(Select2::classname(), [
+            'data' => $facility,
+            'options' => ['placeholder' => 'Odaberi lokaciju'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

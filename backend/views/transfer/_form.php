@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
+use backend\models\Asset;
+use backend\models\Assignee;
+use backend\models\Facility;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Transfer */
@@ -12,11 +16,29 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'asset_id')->textInput() ?>
+    <?= $form->field($model, 'asset_id')->widget(Select2::classname(), [
+            'data' => $assignee,
+            'options' => ['placeholder' => 'Odaberi osnovno sredstvo'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]) ?>
 
-    <?= $form->field($model, 'assignee_id')->textInput() ?>
+    <?= $form->field($model, 'assignee_id')->widget(Select2::classname(), [
+            'data' => $assignee,
+            'options' => ['placeholder' => 'Odaberi korisnika'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]) ?>
 
-    <?= $form->field($model, 'facility_id')->textInput() ?>
+    <?= $form->field($model, 'facility_id')->widget(Select2::classname(), [
+            'data' => $facility,
+            'options' => ['placeholder' => 'Odaberi lokaciju'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

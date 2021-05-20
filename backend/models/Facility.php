@@ -61,9 +61,9 @@ class Facility extends \yii\db\ActiveRecord
             'fac_address' => 'Adresa',
             'details' => 'Detalji',
             'facility_status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'deleted_at' => 'Deleted At',
+            'created_at' => 'Datum kreiranja',
+            'updated_at' => 'Datum izmjene',
+            'deleted_at' => 'Datum brisanja',
         ];
     }
 

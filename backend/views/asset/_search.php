@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use backend\models\Assignee;
+use backend\models\Facility;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\AssetSearch */
@@ -25,7 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'assignee_id') ?>
 
-    <?php // echo $form->field($model, 'facility_id') ?>
+    <?= $form->field($model, 'facility_id') ?>
 
     <?php // echo $form->field($model, 'asset_status') ?>
 

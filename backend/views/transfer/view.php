@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\models\Asset;
+use backend\models\Assignee;
+use backend\models\Facility;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Transfer */
@@ -20,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Da li ste sigruni da želite da obrišete ovaj unos?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,9 +33,24 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'asset_id', 'value => $model->facility->asset_name',
-            'assignee_id','value => $model->assignee->first_name',
-            'facility_id','value => $model->facility->facility_name',
+            [
+                'label'=>'Osnovno sredstvo',
+                'value' => function ($model) {
+                    return Assignee::findOne(['id' => $model->asset_id])->asset_name;
+                }
+            ],
+            [
+                'label'=>'Zaduženi',
+                'value' => function ($model) {
+                    return Assignee::findOne(['id' => $model->assignee_id])->first_name;
+                }
+            ],
+            [
+                'label'=>'Objekat',
+                'value' => function ($model) {
+                    return Facility::findOne(['id' => $model->facility_id])->facility_name;
+                }
+            ],
             'transfer_status',
             'created_at',
             'updated_at',

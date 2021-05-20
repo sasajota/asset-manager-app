@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\TransferSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Transfers';
+$this->title = 'Transferi';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="transfer-index">

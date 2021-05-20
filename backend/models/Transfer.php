@@ -57,9 +57,9 @@ class Transfer extends \yii\db\ActiveRecord
             'assignee_id' => 'ID Zaduženog',
             'facility_id' => 'ID Lokacije',
             'transfer_status' => 'Status transfera',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'deleted_at' => 'Deleted At',
+            'created_at' => 'Datum kreiranja',
+            'updated_at' => 'Datum izmjene',
+            'deleted_at' => 'Datum brisanja',
         ];
     }
 

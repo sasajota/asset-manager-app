@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\AssetSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Assets';
+$this->title = 'Osnovna sredstva';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="asset-index">

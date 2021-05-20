@@ -53,9 +53,9 @@ class Assignee extends \yii\db\ActiveRecord
             'last_name' => 'Prezime',
             'date_of_birth' => 'Datum rođenja',
             'assignee_status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'deleted_at' => 'Deleted At',
+            'created_at' => 'Datum kreiranja',
+            'updated_at' => 'Datum izmjene',
+            'deleted_at' => 'Datum brisanja',
         ];
     }
 
@@ -77,5 +77,17 @@ class Assignee extends \yii\db\ActiveRecord
     public function getTransfers()
     {
         return $this->hasMany(Transfers::className(), ['assignee_id' => 'id']);
+    }
+
+    public function getAllActive()
+    {
+        // sql code za dohvatanje svih aktivnih (imaju status active) assignees
+        /* rezultat treba da bude:
+            [
+                1 => 'Ime prezime',
+                2 => 'Neko drugo ime prezime',
+                ...
+            ]
+        */
     }
 }

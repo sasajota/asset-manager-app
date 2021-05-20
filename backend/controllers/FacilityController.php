@@ -121,7 +121,6 @@ class FacilityController extends Controller
         $model->facility_status = 'INACTIVE';
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
-        return $this->actionIndex();
     }
     /**
      * Finds the Facility model based on its primary key value.

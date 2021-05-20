@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\AssigneeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Assignees';
+$this->title = 'Zaduženi';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="assignee-index">
