@@ -89,5 +89,9 @@ class Assignee extends \yii\db\ActiveRecord
                 ...
             ]
         */
+        $sql = "SELECT first_name, last_name 
+                FROM assignee 
+                WHERE assignee_status='ACTIVE'
+                ORDER BY id";
     }
 }

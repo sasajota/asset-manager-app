@@ -87,4 +87,12 @@ class Facility extends \yii\db\ActiveRecord
         return $this->hasMany(Transfer::className(), ['facility_id' => 'id']);
     }
 
+    public function getAllActive()
+    {
+        $sql = "SELECT facility_name 
+                FROM Facility 
+                WHERE facility_status='ACTIVE'
+                ORDER BY id";
+    }
+
 }

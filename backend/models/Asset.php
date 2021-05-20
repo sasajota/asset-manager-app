@@ -97,4 +97,13 @@ class Asset extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Transfers::className(), ['asset_id' => 'id']);
     }
+
+    public function getAllActive()
+    {
+        $sql = "SELECT asset_name 
+                FROM asset 
+                WHERE asset_status='ACTIVE'
+                ORDER BY id";
+    }
+
 }
