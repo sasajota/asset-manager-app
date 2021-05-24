@@ -115,7 +115,7 @@ class AssigneeController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findOne($id);
+        $model = Assignee::findOne($id);
         $model->assignee_status = 'INACTIVE';
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
