@@ -31,7 +31,7 @@ use backend\models\Facility;
     <?= $form->field($model, 'asset_value')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'assignee_id')->widget(Select2::classname(), [
-            'data' => $assignee,
+            'data' => $assignees,
             'options' => ['placeholder' => 'Odaberi korisnika'],
             'pluginOptions' => [
                 'allowClear' => true
@@ -39,7 +39,7 @@ use backend\models\Facility;
         ]) ?>
 
     <?= $form->field($model, 'facility_id')->widget(Select2::classname(), [
-            'data' => $facility,
+            'data' => $facilities,
             'options' => ['placeholder' => 'Odaberi lokaciju'],
             'pluginOptions' => [
                 'allowClear' => true

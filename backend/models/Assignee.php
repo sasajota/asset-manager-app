@@ -81,17 +81,22 @@ class Assignee extends \yii\db\ActiveRecord
 
     public function getAllActive()
     {
-        // sql code za dohvatanje svih aktivnih (imaju status active) assignees
-        /* rezultat treba da bude:
-            [
-                1 => 'Ime prezime',
-                2 => 'Neko drugo ime prezime',
-                ...
-            ]
-        */
-        $sql = "SELECT first_name, last_name 
-                FROM assignee 
-                WHERE assignee_status='ACTIVE'
-                ORDER BY id";
+        $db = Yii::$app->db;
+        $sql = "SELECT
+                    id,
+                    CONCAT(first_name, ' ', last_name) as assignee_name 
+                FROM
+                    assignees
+                WHERE
+                    assignee_status = 'ACTIVE'";
+
+        $results = $db->createCommand($sql)->queryAll();
+
+        $assignees = [];
+        foreach ($results as $r) {
+            $assignees[$r['id']] = $r['assignee_name'];
+        }
+
+        return ($assignees);
     }
 }

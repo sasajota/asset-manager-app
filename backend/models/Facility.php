@@ -89,10 +89,23 @@ class Facility extends \yii\db\ActiveRecord
 
     public function getAllActive()
     {
-        $sql = "SELECT facility_name 
-                FROM Facility 
-                WHERE facility_status='ACTIVE'
-                ORDER BY id";
+        $db = Yii::$app->db;
+        $sql = "SELECT
+                    id,
+                    facility_name 
+                FROM
+                    facilities
+                WHERE
+                    facility_status = 'ACTIVE'";
+
+        $results = $db->createCommand($sql)->queryAll();
+
+        $facilities = [];
+        foreach ($results as $r) {
+            $facilities[$r['id']] = $r['facility_name'];
+        }
+
+        return ($facilities);
     }
 
 }

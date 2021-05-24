@@ -59,7 +59,7 @@ class Asset extends \yii\db\ActiveRecord
             'asset_name' => 'Naziv',
             'introduction_date' => 'Datum uvođenja',
             'asset_value' => 'Vrijednost',
-            'assignee_id' => 'ID zaduženog',
+            'assignee_id' => 'Zaduženi korisnik',
             'facility_id' => 'ID Lokacije',
             'asset_status' => 'Status',
             'created_at' => 'Datum kreiranja',

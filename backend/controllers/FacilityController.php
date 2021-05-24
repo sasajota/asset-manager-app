@@ -75,10 +75,8 @@ class FacilityController extends Controller
             }
         }
 
-
-
         return $this->render('create', [
-            'model' => $model,
+            'model' => $model
         ]);
 
     }
@@ -102,7 +100,6 @@ class FacilityController extends Controller
             }
         }
 
-      
         return $this->render('update', [
             'model' => $model,
         ]);

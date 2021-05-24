@@ -76,18 +76,17 @@ class AssetController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-        
-        $assignee = new Assignee();
-        $assignee = $assignee->getAllActive();
-        
-        return $this->render('create', [
-            'model' => $model,
-            'assignee' => $assignee
-        ]);
 
+        $facility = new Facility();
+        $facilities = $facility->getAllActive();
+
+        $assignee = new Assignee();
+        $assignees = $assignee->getAllActive();
+        
         return $this->render('create', [
             'model' => $model,
-            'facility' => $facility
+            'assignees' => $assignees,
+            'facilities' => $facilities
         ]);
     }
 
