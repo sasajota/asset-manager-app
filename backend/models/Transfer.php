@@ -53,9 +53,9 @@ class Transfer extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'asset_id' => 'ID Osnovnog sredstva',
-            'assignee_id' => 'ID Zaduženog',
-            'facility_id' => 'ID Lokacije',
+            'asset_id' => 'Osnovno sredstvo',
+            'assignee_id' => 'Zaduženi',
+            'facility_id' => 'Lokacija',
             'transfer_status' => 'Status transfera',
             'created_at' => 'Datum kreiranja',
             'updated_at' => 'Datum izmjene',

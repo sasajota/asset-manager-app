@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Asset', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Kreirajte OS', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'introduction_date',
             'asset_value',
             'assignee_id',
-            //'facility_id',
+            'facility_id',
             //'asset_status',
             //'created_at',
             //'updated_at',

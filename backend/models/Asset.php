@@ -60,7 +60,7 @@ class Asset extends \yii\db\ActiveRecord
             'introduction_date' => 'Datum uvođenja',
             'asset_value' => 'Vrijednost',
             'assignee_id' => 'Zaduženi korisnik',
-            'facility_id' => 'ID Lokacije',
+            'facility_id' => 'Lokacija',
             'asset_status' => 'Status',
             'created_at' => 'Datum kreiranja',
             'updated_at' => 'Datum izmjene',
@@ -100,10 +100,22 @@ class Asset extends \yii\db\ActiveRecord
 
     public function getAllActive()
     {
-        $sql = "SELECT asset_name 
-                FROM asset 
-                WHERE asset_status='ACTIVE'
-                ORDER BY id";
-    }
+        $db = Yii::$app->db;
+        $sql = "SELECT
+                    id,
+                    asset_name
+                FROM
+                    assets
+                WHERE
+                    asset_status = 'ACTIVE'";
 
+        $results = $db->createCommand($sql)->queryAll();
+
+        $assets = [];
+        foreach ($results as $r) {
+            $assets[$r['id']] = $r['asset_name'];
+        }
+
+        return ($assets);
+    }
 }

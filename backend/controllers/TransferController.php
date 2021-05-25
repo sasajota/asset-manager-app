@@ -3,6 +3,9 @@
 namespace backend\controllers;
 
 use Yii;
+use backend\models\Asset;
+use backend\models\Assignee;
+use backend\models\Facility;
 use backend\models\Transfer;
 use backend\models\TransferSearch;
 use yii\web\Controller;
@@ -76,8 +79,20 @@ class TransferController extends Controller
             }
         }
 
+        $facility = new Facility();
+        $facilities = $facility->getAllActive();
+
+        $asset = new Asset();
+        $assets = $asset->getAllActive();
+
+        $assignee = new Assignee();
+        $assignees = $assignee->getAllActive();
+        
         return $this->render('create', [
             'model' => $model,
+            'assignees' => $assignees,
+            'assets' => $assets,
+            'facilities' => $facilities
         ]);
 
     }
@@ -114,10 +129,11 @@ class TransferController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findOne($id);
+        $model = Transfer::findOne($id);
         $model->transfer_status = 'INACTIVE';
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
+        return $this->actionIndex();
     }
 
     /**

@@ -17,7 +17,7 @@ use backend\models\Facility;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'asset_id')->widget(Select2::classname(), [
-            'data' => $assignee,
+            'data' => $assets,
             'options' => ['placeholder' => 'Odaberi osnovno sredstvo'],
             'pluginOptions' => [
                 'allowClear' => true
@@ -25,7 +25,7 @@ use backend\models\Facility;
         ]) ?>
 
     <?= $form->field($model, 'assignee_id')->widget(Select2::classname(), [
-            'data' => $assignee,
+            'data' => $assignees,
             'options' => ['placeholder' => 'Odaberi korisnika'],
             'pluginOptions' => [
                 'allowClear' => true

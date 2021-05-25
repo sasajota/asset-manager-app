@@ -122,10 +122,11 @@ class AssetController extends Controller
      */
     public function actionDelete($id)
     {
-        $model = $this->findOne($id);
+        $model = Asset::findOne($id);
         $model->asset_status = 'INACTIVE';
         $model->deleted_at = date('Y-m-d H:i:s');
         $model->save();
+        return $this->actionIndex();
     }
 
     /**
