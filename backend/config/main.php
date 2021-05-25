@@ -12,8 +12,8 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
-    'sourceLanguage' => 'en',
-    'language' => 'en',
+    'sourceLanguage' => 'sr-Latn',
+    'language' => 'sr-Latn',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',

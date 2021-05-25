@@ -30,8 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'asset_name',
             'introduction_date',
             'asset_value',
-            'assignee_id',
-            'facility_id',
+            [
+                'attribute' => 'assignee_id',
+                'value' => function ($model) {
+                    return $model->getAssignee()->one()->first_name . ' ' . $model->getAssignee()->one()->last_name;
+                }
+            ],
+            [
+                'attribute' => 'facility_id',
+                'value' => 'facility.facility_name'
+            ],
             //'asset_status',
             //'created_at',
             //'updated_at',

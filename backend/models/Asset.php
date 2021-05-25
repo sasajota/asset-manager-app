@@ -75,7 +75,7 @@ class Asset extends \yii\db\ActiveRecord
      */
     public function getAssignee()
     {
-        return $this->hasOne(Assignees::className(), ['id' => 'assignee_id']);
+        return $this->hasOne(Assignee::className(), ['id' => 'assignee_id']);
     }
 
     /**
@@ -85,7 +85,7 @@ class Asset extends \yii\db\ActiveRecord
      */
     public function getFacility()
     {
-        return $this->hasOne(Facilities::className(), ['id' => 'facility_id']);
+        return $this->hasOne(Facility::className(), ['id' => 'facility_id']);
     }
 
     /**
@@ -95,7 +95,7 @@ class Asset extends \yii\db\ActiveRecord
      */
     public function getTransfers()
     {
-        return $this->hasMany(Transfers::className(), ['asset_id' => 'id']);
+        return $this->hasMany(Transfer::className(), ['asset_id' => 'id']);
     }
 
     public function getAllActive()

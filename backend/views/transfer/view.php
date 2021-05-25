@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'=>'Osnovno sredstvo',
                 'value' => function ($model) {
-                    return Assignee::findOne(['id' => $model->asset_id])->asset_name;
+                    return Asset::findOne(['id' => $model->asset_id])->asset_name;
                 }
             ],
             [
