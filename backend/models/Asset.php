@@ -93,7 +93,7 @@ class Asset extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTransfers()
+    public function getTransfer()
     {
         return $this->hasMany(Transfer::className(), ['asset_id' => 'id']);
     }

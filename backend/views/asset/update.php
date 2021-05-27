@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Asset */
 
-$this->title = 'Izmjenite OS: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Assets', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Izmjeni informacije o osnovnom sredstvu: ' . $model->asset_name;
+$this->params['breadcrumbs'][] = ['label' => 'Osnovna sredstva', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->asset_name, 'url' => ['view', 'id' => $model->asset_name]];
+$this->params['breadcrumbs'][] = 'Izmjena informacija';
 ?>
 <div class="asset-update">
 

@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Facility */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Facilities', 'url' => ['index']];
+$this->title = $model->facility_name;
+$this->params['breadcrumbs'][] = ['label' => 'Lokacije', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Izmjeni', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Obriši', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Da li ste sigruni da želite da obrišete ovaj unos??',
+                'confirm' => 'Da li ste sigruni da želite da obrišete ovaj unos?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'location_lon',
             'fac_address',
             'details:ntext',
-            'facility_status',
+            //'facility_status',
             'created_at',
             'updated_at',
             'deleted_at',

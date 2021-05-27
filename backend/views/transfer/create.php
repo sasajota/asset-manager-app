@@ -8,8 +8,8 @@ use backend\models\Facility;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Transfer */
 
-$this->title = 'Dodajte transfer';
-$this->params['breadcrumbs'][] = ['label' => 'Transfers', 'url' => ['index']];
+$this->title = 'Kreiraj novi unos';
+$this->params['breadcrumbs'][] = ['label' => 'Prelaznice', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="transfer-create">

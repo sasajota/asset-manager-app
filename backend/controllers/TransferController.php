@@ -114,9 +114,21 @@ class TransferController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-         
-        return $this->render('update', [
+
+        $facility = new Facility();
+        $facilities = $facility->getAllActive();
+
+        $asset = new Asset();
+        $assets = $asset->getAllActive();
+
+        $assignee = new Assignee();
+        $assignees = $assignee->getAllActive();
+        
+        return $this->render('create', [
             'model' => $model,
+            'assignees' => $assignees,
+            'assets' => $assets,
+            'facilities' => $facilities
         ]);
     }
     /**

@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Assignee */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Assignees', 'url' => ['index']];
+$this->title = $model->first_name;
+$this->params['breadcrumbs'][] = ['label' => 'Zaduženi', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Update', ['Izmjeni', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['Obriši', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Da li ste sigruni da želite da obrišete ovaj unos?',
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'first_name',
             'last_name',
             'date_of_birth',
-            'assignee_status',
+            //'assignee_status',
             'created_at',
             'updated_at',
             'deleted_at',

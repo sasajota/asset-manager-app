@@ -9,7 +9,7 @@ use backend\models\Facility;
 /* @var $model backend\models\Asset */
 
 $this->title = $model->asset_name;
-$this->params['breadcrumbs'][] = ['label' => 'Assets', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Osnovna sredstva', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -18,8 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Izmjeni', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Obriši', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Da li ste sigurni da želite da obrišete ovaj unos?',
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Facility::findOne(['id' => $model->facility_id])->facility_name;
                 }
             ],
-            'asset_status',
+            //'asset_status',
             'created_at',
             'updated_at',
             'deleted_at',

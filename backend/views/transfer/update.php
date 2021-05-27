@@ -1,14 +1,17 @@
 <?php
 
 use yii\helpers\Html;
+use backend\models\Asset;
+use backend\models\Assignee;
+use backend\models\Facility;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Transfer */
 
-$this->title = 'Izmjenite transfer: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Transfers', 'url' => ['index']];
+$this->title = 'Izmjeni informacije o prelaznici: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Prelaznice', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Izmjena informacija';
 ?>
 <div class="transfer-update">
 

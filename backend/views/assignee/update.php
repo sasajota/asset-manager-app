@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Assignee */
 
-$this->title = 'Izmjenite zaduženog: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Assignees', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Izmjeni informacije o zaduženom: ' . $model->assignee_name;
+$this->params['breadcrumbs'][] = ['label' => 'Zaduženi', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->assignee_name, 'url' => ['view', 'id' => $model->assignee_name]];
+$this->params['breadcrumbs'][] = 'Izmjena informacija';
 ?>
 <div class="assignee-update">
 

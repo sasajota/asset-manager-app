@@ -33,7 +33,7 @@ use backend\models\Facility;
         ]) ?>
 
     <?= $form->field($model, 'facility_id')->widget(Select2::classname(), [
-            'data' => $facility,
+            'data' => $facilities,
             'options' => ['placeholder' => 'Odaberi lokaciju'],
             'pluginOptions' => [
                 'allowClear' => true

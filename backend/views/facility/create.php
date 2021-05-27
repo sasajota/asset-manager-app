@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Facility */
 
-$this->title = 'Dodajte lokaciju';
-$this->params['breadcrumbs'][] = ['label' => 'Facilities', 'url' => ['index']];
+$this->title = 'Kreiraj novi unos';
+$this->params['breadcrumbs'][] = ['label' => 'Lokacije', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="facility-create">

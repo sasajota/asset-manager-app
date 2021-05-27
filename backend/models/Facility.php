@@ -72,7 +72,7 @@ class Facility extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getAssets()
+    public function getAsset()
     {
         return $this->hasMany(Asset::className(), ['facility_id' => 'id']);
     }
@@ -82,7 +82,7 @@ class Facility extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTransfers()
+    public function getTransfer()
     {
         return $this->hasMany(Transfer::className(), ['facility_id' => 'id']);
     }

@@ -70,7 +70,7 @@ class Transfer extends \yii\db\ActiveRecord
      */
     public function getAsset()
     {
-        return $this->hasOne(Assets::className(), ['id' => 'asset_id']);
+        return $this->hasOne(Asset::className(), ['id' => 'asset_id']);
     }
 
     /**
@@ -80,7 +80,7 @@ class Transfer extends \yii\db\ActiveRecord
      */
     public function getAssignee()
     {
-        return $this->hasOne(Assignees::className(), ['id' => 'assignee_id']);
+        return $this->hasOne(Assignee::className(), ['id' => 'assignee_id']);
     }
 
     /**
@@ -90,6 +90,6 @@ class Transfer extends \yii\db\ActiveRecord
      */
     public function getFacility()
     {
-        return $this->hasOne(Facilities::className(), ['id' => 'facility_id']);
+        return $this->hasOne(Facility::className(), ['id' => 'facility_id']);
     }
 }

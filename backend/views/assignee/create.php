@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Assignee */
 
-$this->title = 'Dodajte zaduženog';
-$this->params['breadcrumbs'][] = ['label' => 'Assignees', 'url' => ['index']];
+$this->title = 'Kreiraj novi unos';
+$this->params['breadcrumbs'][] = ['label' => 'Zaduženi', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="assignee-create">

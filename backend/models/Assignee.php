@@ -64,7 +64,7 @@ class Assignee extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getAssets()
+    public function getAsset()
     {
         return $this->hasMany(Assets::className(), ['assignee_id' => 'id']);
     }
@@ -74,7 +74,7 @@ class Assignee extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTransfers()
+    public function getTransfer()
     {
         return $this->hasMany(Transfers::className(), ['assignee_id' => 'id']);
     }

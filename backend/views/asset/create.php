@@ -7,8 +7,8 @@ use backend\models\Facility;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Asset */
 
-$this->title = 'Dodajte osnovno sredstvo';
-$this->params['breadcrumbs'][] = ['label' => 'Assets', 'url' => ['index']];
+$this->title = 'Dodaj informacije o osnovnom sredstvu';
+$this->params['breadcrumbs'][] = ['label' => 'Osnovna sredstva', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="asset-create">
