@@ -12,7 +12,7 @@ $this->title = 'Prijavi se';
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Molim Vas ispunite sledeća polja da bi se prijavili:</p>
+    <p>Molim Vas ispunite sledeća polja da bi ste se prijavili:</p>
 
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 

@@ -10,6 +10,7 @@ use backend\models\Facility;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Transfer */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="transfer-form">
@@ -20,7 +21,8 @@ use backend\models\Facility;
             'data' => $assets,
             'options' => ['placeholder' => 'Odaberi osnovno sredstvo'],
             'pluginOptions' => [
-                'allowClear' => true
+                'allowClear' => true,
+                'disabled' => $assetDisabled
             ],
         ]) ?>
 

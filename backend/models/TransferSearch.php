@@ -22,6 +22,8 @@ class TransferSearch extends Transfer
         ];
     }
 
+    
+    
     /**
      * {@inheritdoc}
      */
@@ -65,9 +67,11 @@ class TransferSearch extends Transfer
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'deleted_at' => $this->deleted_at,
+            'transfer_status' => 'ACTIVE'
         ]);
 
-        $query->andFilterWhere(['like', 'transfer_status', $this->transfer_status]);
+        $query->andFilterWhere(['like', 'transfer_status', $this->transfer_status])
+            ->andFilterWhere(['like', 'transfer_status', $this->transfer_status]);
 
         return $dataProvider;
     }

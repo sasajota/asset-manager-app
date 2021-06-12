@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Assignee */
 
-$this->title = 'Izmjeni informacije o zaduženom: ' . $model->assignee_name;
+$this->title = 'Izmjeni informacije o zaduženom: ' . $model->first_name . ' ' . $model->last_name;
 $this->params['breadcrumbs'][] = ['label' => 'Zaduženi', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->assignee_name, 'url' => ['view', 'id' => $model->assignee_name]];
+$this->params['breadcrumbs'][] = ['label' => $model->first_name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Izmjena informacija';
 ?>
 <div class="assignee-update">

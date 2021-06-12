@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = 'Izmjeni informacije o osnovnom sredstvu: ' . $model->asset_name;
 $this->params['breadcrumbs'][] = ['label' => 'Osnovna sredstva', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->asset_name, 'url' => ['view', 'id' => $model->asset_name]];
+$this->params['breadcrumbs'][] = ['label' => $model->asset_name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Izmjena informacija';
 ?>
 <div class="asset-update">

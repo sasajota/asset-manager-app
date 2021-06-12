@@ -6,6 +6,7 @@ use Yii;
 use backend\models\Asset;
 use backend\models\Assignee;
 use backend\models\Facility;
+use backend\models\Transfer;
 use backend\models\AssetSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -87,6 +88,7 @@ class AssetController extends Controller
             }
         }
 
+
         $facility = new Facility();
         $facilities = $facility->getAllActive();
 
@@ -114,12 +116,20 @@ class AssetController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->updated_at = date('Y-m-d H:i:s');
 
+            $transfer = new Transfer();
+            $transfer->asset_id = $model->id;
+            $transfer->assignee_id = $model->assignee_id;
+            $transfer->facility_id = $model->facility_id;
+            $transfer->transfer_status = 'ACTIVE';
+            $transfer->created_at = date('Y-m-d H:i:s');
+            $transfer->save();
+
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
 
-        $facility = new Facility();
+        $facility = new Facility();    
         $facilities = $facility->getAllActive();
 
         $assignee = new Assignee();
@@ -128,7 +138,7 @@ class AssetController extends Controller
         return $this->render('update', [
             'model' => $model,
             'assignees' => $assignees,
-            'facilities' => $facilities
+            'facilities' => $facilities,
         ]);
     }
     /**

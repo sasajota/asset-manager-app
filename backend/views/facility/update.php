@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = 'Izmjeni informacije o lokaciji: ' . $model->facility_name;
 $this->params['breadcrumbs'][] = ['label' => 'Lokacije', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->facility_name, 'url' => ['view', 'id' => $model->facility_name]];
+$this->params['breadcrumbs'][] = ['label' => $model->facility_name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Izmjena informacija';
 ?>
 <div class="facility-update">

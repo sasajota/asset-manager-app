@@ -71,7 +71,8 @@ class FacilitySearch extends Facility
 
         $query->andFilterWhere(['like', 'facility_name', $this->facility_name])
             ->andFilterWhere(['like', 'fac_address', $this->fac_address])
-            ->andFilterWhere(['like', 'details', $this->details]);
+            ->andFilterWhere(['like', 'details', $this->details])
+            ->andFilterWhere(['like', 'facility_status', $this->facility_status]);
 
         return $dataProvider;
     }
